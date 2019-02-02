@@ -1,0 +1,10 @@
+GIMP Palette
+#
+255 255 255	Untitled
+  6   6   8	Untitled
+255 252  64	Untitled
+250 106  10	Untitled
+254 243 192	Untitled
+160 134  98	Untitled
+218 224 234	Untitled
+139 147 175	Untitled
