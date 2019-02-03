@@ -5,6 +5,8 @@ using UnityEngine;
 public class BusController : MonoBehaviour {
 
     public float movementSpeed;
+    public float dragSpeed;
+    
 
     private Rigidbody2D rb;
 
@@ -15,25 +17,27 @@ public class BusController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        rb.AddForce(Vector3.right * dragSpeed);
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector3.left * movementSpeed);
-            rb.velocity = Vector3.zero;
+            // rb.velocity = Vector3.zero;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(Vector3.right * movementSpeed);
-            rb.velocity = Vector3.zero;
+            // rb.velocity = Vector3.zero;
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.AddForce(Vector3.up * movementSpeed);
-            rb.velocity = Vector3.zero;
+            // rb.velocity = Vector3.zero;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             rb.AddForce(Vector3.down * movementSpeed);
-            rb.velocity = Vector3.zero;
+            // rb.velocity = Vector3.zero;
         }
 
         // Vector3 oldPosition = gameObject.transform.position;
