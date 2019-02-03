@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BusGameController : MonoBehaviour
 {
-    public float duration; // How long this level will last for.
+    public float duration; 
+    // How long this level will last for.
     public Text timeDisplay;
     
     private float remainingTime;
@@ -13,7 +15,6 @@ public class BusGameController : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class BusGameController : MonoBehaviour
 
     void gameOver(bool victory){
         if ( victory ){
-            // GO TO SCENE
+            SceneManager.LoadSceneAsync("Scenes/Music");
         } else {
             // GO TO GAME OVER
         }
