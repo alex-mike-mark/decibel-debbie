@@ -23,7 +23,6 @@ public class RepeatingBackgroud : MonoBehaviour
 
     void RespositionBackground()
     {
-        Debug.Log("Repo!");
         Vector2 groundOffset = new Vector2(-26f,0);
         transform.position = (Vector2) transform.position + groundOffset;
     }

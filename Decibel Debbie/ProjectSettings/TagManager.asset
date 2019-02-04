@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Road
+  - gas
+  - fan
+  - bus
   layers:
   - Default
   - TransparentFX
