@@ -57,7 +57,7 @@ public class MoveLSpot : MonoBehaviour {
 
     IEnumerator ShowTime()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(3);
         rend.enabled = true;
         sound.Play();
     }
