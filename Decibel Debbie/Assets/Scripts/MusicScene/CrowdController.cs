@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrowdController : MonoBehaviour
 {
     private AudioSource sound;
+    private float nextCheer;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,15 @@ public class CrowdController : MonoBehaviour
 
     IEnumerator ShowTime()
     {
+
         yield return new WaitForSeconds(3);
         sound.Play();
+        while (true)
+        {
+            nextCheer = Random.Range(10, 20);
+            yield return new WaitForSeconds(nextCheer);
+            sound.Play();
+        }
+
     }
 }

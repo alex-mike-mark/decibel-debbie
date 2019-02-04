@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 472669690}
   m_Layer: 0
   m_Name: either
-  m_TagString: Untagged
+  m_TagString: band
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 744530173}
   m_Layer: 0
   m_Name: punk
-  m_TagString: Untagged
+  m_TagString: band
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -905,7 +905,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.368
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 1773295074}
   m_Layer: 0
   m_Name: ruby
-  m_TagString: Untagged
+  m_TagString: band
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
