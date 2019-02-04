@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveLSpot : MonoBehaviour {
-
     public float movementSpeed;
-
+    private Renderer rend;
+    private AudioSource sound;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sound = GetComponent<AudioSource>();
+
+
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+        StartCoroutine(ShowTime());
     }
 
     void FixedUpdate()
@@ -47,5 +53,12 @@ public class MoveLSpot : MonoBehaviour {
         newPosition.y = Mathf.Max(newPosition.y,-14);
 
         gameObject.transform.position = newPosition;
+    }
+
+    IEnumerator ShowTime()
+    {
+        yield return new WaitForSeconds(0);
+        rend.enabled = true;
+        sound.Play();
     }
 }

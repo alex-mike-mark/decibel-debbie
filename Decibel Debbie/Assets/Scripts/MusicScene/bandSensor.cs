@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class bandSensor : MonoBehaviour {
     bool triggered;
-    
+    private Renderer rend;
 
     // Use this for initialization
     void Start () {
         triggered = false;
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -18,14 +20,15 @@ public class bandSensor : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (triggered == false && (collision.name == "RArm" || collision.name == "LArm"))
+        if (triggered == false && (collision.name == "RSpot" || collision.name == "LSpot"))
         {
-
+            rend.enabled = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         triggered = false;
+        rend.enabled = false;
     }
 }
