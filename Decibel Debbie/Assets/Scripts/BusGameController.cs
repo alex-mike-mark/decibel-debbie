@@ -39,11 +39,8 @@ public class BusGameController : MonoBehaviour
     }
 
     void gameOver(bool victory){
-        if ( victory ){
-            SceneManager.LoadSceneAsync("Scenes/Music");
-        } else {
-            // GO TO GAME OVER
-        }
+        //Switch to music scene
+       SceneManager.LoadSceneAsync("Scenes/Music");
     }
 
     public void addGas(int units){
