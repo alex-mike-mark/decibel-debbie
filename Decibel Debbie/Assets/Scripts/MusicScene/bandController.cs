@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bandController : MonoBehaviour {
-
+    private bool moving;
     private float timeToChangeDirection;
     private Rigidbody2D rb;
     Renderer rend;
@@ -14,19 +14,24 @@ public class bandController : MonoBehaviour {
         ChangeDirection();
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<Renderer>();
+        moving = false;
+        StartCoroutine(ShowTime());
     }
 
     // Update is called once per frame
     public void Update()
     {
-        timeToChangeDirection -= Time.deltaTime;
-
-        if (timeToChangeDirection <= 0)
+        if(moving)
         {
-            ChangeDirection();
-        }
+            timeToChangeDirection -= Time.deltaTime;
 
-        rb.velocity = transform.up * 2;
+            if (timeToChangeDirection <= 0)
+            {
+                ChangeDirection();
+            }
+
+            rb.velocity = transform.up * 2;
+        }
     }
 
     private void ChangeDirection()
@@ -40,4 +45,9 @@ public class bandController : MonoBehaviour {
         timeToChangeDirection = 1.5f;
     }
 
+    IEnumerator ShowTime()
+    {
+        yield return new WaitForSeconds(4);
+        moving = true;
+    }
 }
